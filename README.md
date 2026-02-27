@@ -95,15 +95,15 @@ total_sale IS NULL;
 - **Customer Count**: Find out how many unique customers are in the dataset.
 - **Category Count**: Identify all unique product categories in the dataset.
 
-**How many Sales we have?**:
+**How many Sales we have**:
 ```sql
 Select Count(*) as Total_Sales from Retail_Sales;
 ```
-**How many Unique Customers we Have?**:
+**How many Unique Customers we Have**:
 ```sql
 Select count(Distinct Customer_id) as Unique_Customers from Retail_Sales;
 ```
-**How many Unique Categories we Have?**:
+**How many Unique Categories we Have**:
 ```sql
 Select Distinct Category from Retail_Sales;
 ```
@@ -123,22 +123,22 @@ Select * from Retail_Sales
 where Category = 'Clothing' AND Quantity >= 3 AND Year(Sale_date) = '2022' AND Month(Sale_date) = '11';
 ```
 
-3. **Write a SQL query to calculate the total sales (total_sale) for each category.**:
+3. **Write a SQL query to calculate the total sales (total_sale) for each category**:
 ```sql
 Select Category, Sum(total_Sale) As Total_Sales, Count(*) as Total_Orders from Retail_Sales group by Category;
 ```
 
-4. **Write a SQL query to find the average age of customers who purchased items from the 'Beauty' category.**:
+4. **Write a SQL query to find the average age of customers who purchased items from the 'Beauty' category**:
 ```sql
 Select Round(Avg(age), 2) As Average_Age from Retail_Sales Where Category = 'Beauty';
 ```
 
-5. **Write a SQL query to find all transactions where the total_sale is greater than 1000.**:
+5. **Write a SQL query to find all transactions where the total_sale is greater than 1000**:
 ```sql
 Select * from Retail_Sales Where Total_Sale > 1000;
 ```
 
-6. **Write a SQL query to find the total number of transactions (transaction_id) made by each gender in each category.**:
+6. **Write a SQL query to find the total number of transactions (transaction_id) made by each gender in each category**:
 ```sql
 Select Category, Gender, Count(*) As Total_Transection_Id from Retail_Sales group by Category, Gender;
 ```
@@ -149,12 +149,12 @@ Select Year(sale_Date) as Sale_Year, Month(sale_Date) as Sale_Month, Round(Avg(T
 Group by Sale_Year, Sale_Month order by Sale_Year, Sale_Month;
 ```
 
-8. **Write a SQL query to find the top 5 customers based on the highest total sales **:
+8. **Write a SQL query to find the top 5 customers based on the highest total sales**:
 ```sql
 Select Customer_id, sum(Total_Sale) As Sales from Retail_Sales group by Customer_id order by Sales desc Limit 5;
 ```
 
-9. **Write a SQL query to find the number of unique customers who purchased items from each category.**:
+9. **Write a SQL query to find the number of unique customers who purchased items from each category**:
 ```sql
 Select Category, Count(Distinct Customer_id) as cnt_unique_cs from Retail_sales group by Category;
 ```
