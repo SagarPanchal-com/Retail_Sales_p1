@@ -50,11 +50,6 @@ Select * from Retail_Sales;
 
 - **Null Value Check**: Check for any null values in the dataset and delete records with missing data.
 
-```sql
-SELECT COUNT(*) FROM retail_sales;
-SELECT COUNT(DISTINCT customer_id) FROM retail_sales;
-SELECT DISTINCT category FROM retail_sales;
-```
 **Finding Null Values**:
 ```sql
 SELECT * FROM retail_sales
